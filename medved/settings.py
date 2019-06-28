@@ -25,7 +25,7 @@ SECRET_KEY = '4z0p037c&8@2+k^y9@*pz85b8&$isp=g6k^nt#=3d-$=ikpq!n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'cdtproject.pythonanywhere.com']
 
 
 # Application definition
