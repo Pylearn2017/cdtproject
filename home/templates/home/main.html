@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<title>{{ title }}</title>
+	<link rel="stylesheet" href="{% static 'home/css/main.css' %}">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+    <a class="navbar-brand" href="{% url 'home-home' %}"><b>A-litvin</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample09">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home-home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home-contacts' %}">Contacts</a>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-nav">
+    	<a href="/" class="btn btn-outline-secondary">Войти</a>
+    </div>
+  </nav>
+
+  <main class="container">
+  	<div class="row">
+  		<div class="col-md-8">
+        {% if messages %}
+          {% for mes in messages %}
+            <div class="alert alert-success">
+              {{ mes }}
+            </div>
+          {% endfor %}
+        {% endif %}
+  			{% block main_section %}
+        }
+			{% endblock%}
+  		</div>
+
+  		<aside class="col-md-4">
+			<div class="p-3">
+				{% block aside_home_section %}
+				{% endblock %}
+			</div>
+		</aside>	
+  	</div>
+  </main>
+
+
+</body>
+</html>

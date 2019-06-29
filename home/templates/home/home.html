@@ -1,0 +1,30 @@
+{% extends 'home/main.html' %}
+
+{% block main_section %}
+
+	{% for post in news %}
+		<div class="alert alert-light">
+			<h1>{{ post.title }}</h1>
+			<p>{{ post.text }}</p>
+			<span class="text-muted">{{ post.date }}</span>
+			{% if post.autor %}
+				<p><b>Автор:</b> {{ post.autor }}</p>	
+			{% else %}
+				<p><b>Автор:</b> Анонимен</p>		
+			{% endif %}
+
+		</div>
+	{% endfor %}
+
+{% endblock%}
+
+{% block aside_home_section %}
+<h3>Сотрудник месяца</h3>
+<img class="img-thumbnail mb-1" src="https://lh3.googleusercontent.com/FIpqAptMrVW_j3rSYEPd3uU9JdV05ZhVvAXHVvQ06iDNpXB_8q6p_eqDdpYtn95wcx4SV0BIPhoouTDrwE6gwjl5vXWjF5jej0pYyS6PCw5aPwAHYKR-FFpsA1q1RLafBB6sjLo5qe-5PcCdLY2GettcCy6tu1gUoQXXVP-R6MheHe4X7qEQNLmPCX4npr1OpBONy9NPqPFiNu9oNEumZfAXu__2z4PP8Pj1ItBM6hO-4ym3UAhPzvgKofQCi7S6HdKZKuUz5a5Kv-d6Q8JuX0IB0mUQtbXrMMhgfXlBpK4TGTLLpv1i9sGd_vKz_chMr4B00bjxf-f5EWz_UeiVHWAKLGxmsYOs-FapNa_7V1-IF5Nxs1HSNCKoe9FaeJQ28BJP6WdpNkNo454KNFmmdeqiIk-5X22brrdejrbSnfLnw6Rlz6XawU4SaSGyzZ3CAbanGQBndwDrC9tj1zWLH6MCNeLyOsZv2IupaoxQlIvuM4Pn_ybF0GgH2ATJIJguAVzHu6CdmxpjmQXJjdXHgr2FjJn2mtJKLpZKdzK_X3ZM2RgEc3MGR9hjLxtzkEF8zZ86pM4-PAjZNAPuYwY9xqTwqNL4DQCAVtKNArsxxOK5vcDt42c_IecVvwMCzNgqF3HlNtZcR3H0gkrRFQL2dK5PPRC07yo=w1280-h960-no" alt="Евгения">
+<p>Позитивный настрой, уверенность в своих силах, постоянное самосовершенствование, самостоятельный поиск и получение новых знаний, умение ладить с людьми - вот в чем секрет!</p>
+<a href="http://www.strogin.ru/nauchno-texnicheskaja-napravlennost/centr-komp-juternoj-podgotovki/" target="_blank">
+	<button class="btn btn-warning">Посмотреть</button>
+</a>
+{% endblock aside_home_section %}
+
+
